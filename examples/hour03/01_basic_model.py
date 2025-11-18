@@ -8,6 +8,7 @@ class TranscriptInput(BaseModel):
     language: str = "KO"
 
 def process_transcript(payload: TranscriptInput) -> dict:
+    """텍스트 길이 정보를 담아 응답합니다."""
     return {"length": len(payload.text), "language": payload.language}
 
 @app.post("/transcript")

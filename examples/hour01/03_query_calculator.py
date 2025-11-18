@@ -3,6 +3,7 @@ from fastapi import FastAPI
 app = FastAPI(docs_url='/api/docs', openapi_url='/api/openapi.json')
 
 def add_numbers(a: float, b:float) -> dict:
+    """두 수의 합과 차를 반환합니다."""
     return {"sum": a+b, "difference": a-b}
 
 @app.get("/math/add")

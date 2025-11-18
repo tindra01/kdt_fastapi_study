@@ -12,6 +12,7 @@ DATA = pd.DataFrame(
 )
 
 def build_summary() -> dict:
+    """DataFrame의 기본 통계를 딕셔너리로 변환합니다."""
     summary = DATA.describe(include="all").fillna("_")
     return summary.to_dict()
 

@@ -1,3 +1,4 @@
+#반복 데이터(list) 검증 후 요약 응답
 from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel, Field

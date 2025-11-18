@@ -6,6 +6,7 @@ from fastapi import FastAPI
 app = FastAPI(docs_url='/api/docs', openapi_url='/api/openapi.json')
 
 def compute_stats(values: Iterable[float]) -> dict:
+    """평균과 표준편차를 계산합니다."""
     arr = np.array(list(values), dtype=float)
     return {
         "count": int(arr.size),
@@ -19,6 +20,7 @@ def stats_endpoint() -> dict:
     return compute_stats(sample)
 
 if __name__ == "__main__":
+    # uvicorn --reload examples.hour02.01_numpy_stats:app
     import uvicorn
 
     uvicorn.run(app, host="127.0.0.1", port=8888)

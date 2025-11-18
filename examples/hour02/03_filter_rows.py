@@ -12,6 +12,7 @@ CHAT_LOG = pd.DataFrame(
 )
 
 def filter_by_intent(intent: str) -> list[dict]:
+    """특정 의도(intent)만 선택합니다."""
     filtered = CHAT_LOG.loc[CHAT_LOG["intent"] == intent]
     return filtered.to_dict(orient="records")
 

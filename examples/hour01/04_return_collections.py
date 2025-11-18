@@ -10,6 +10,7 @@ COURSE_TOPICS = [
 ]
 
 def get_course_topics() -> dict:
+    """강의 토픽을 리스트로 제공하고, 리스트 개수 카운트."""
     return {"topics": COURSE_TOPICS, "count": len(COURSE_TOPICS)}
 
 @app.get("/course/topics")
